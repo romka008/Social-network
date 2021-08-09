@@ -1,19 +1,26 @@
+import s from './Navbar.module.css';
+console.log(s)
+// let s = {
+//   'nav': 'Navbar_nav__1k_o9',
+//   'item': 'Navbar_item__GCDhY',
+// }
+
 function Navbar() {
-    return <nav className='nav'>
-    <div>
+  return <nav className={s.nav}>
+    <div className={s.item}>
       <a href="">Profile</a>
     </div>
-    <div>
-      <a href="">Messages</a>
+    <div className={`${s.item} ${s.active}`}>
+      <a>Messages</a>
     </div>
-    <div>
+    <div className={s.item}>
       <a href="">News</a>
     </div>
-    <div>
+    <div className={s.item}>
       <a href="">Music</a>
     </div>
     <p></p>
-    <div>
+    <div className={s.item}>
       <a href="">Setting</a>
     </div>
   </nav>
