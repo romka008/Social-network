@@ -1,5 +1,5 @@
 import s from './Navbar.module.css';
-console.log(s)
+
 // let s = {
 //   'nav': 'Navbar_nav__1k_o9',
 //   'item': 'Navbar_item__GCDhY',
