@@ -1,9 +1,8 @@
 import s from './MyPosts.module.css';
-import Posts from './Post/Posts';
+import Post from './Post/Post';
 
 function MyPosts() {
-  return (
-    <div>
+  return <div>
       <div>
         My posts
         <div>
@@ -11,11 +10,12 @@ function MyPosts() {
           <button>New post</button>
         </div>
         <div className={s.posts}>
-        <Posts />
+        <Post message = 'Hi, how are you'/>
+        <Post message = "It's my first post"/>
         </div>
       </div>
     </div>
-  )
+  
 }
 
 export default MyPosts
