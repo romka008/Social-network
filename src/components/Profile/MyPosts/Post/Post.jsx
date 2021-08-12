@@ -5,7 +5,7 @@ function Post(props) {
 
     <div className={s.posts}>
       <div className={s.item}>
-        <img src="https://i.pinimg.com/originals/08/3e/9d/083e9d9ee96acc3c14c036d5990f18fd.png" alt="" />
+        <img src="https://politeka.net/images/2019/11/07/s5v80qnxgMYD0GaNAAxhNyR4SlIvGSIR5UbLlJzR.jpeg" alt="" />
         {props.message}
         <div>
           <span>like</span>
