@@ -1,14 +1,14 @@
 import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 function Profile() {
-    return <div>
-    <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701313431.jpg" alt="" />
+  return (
     <div>
-    ava + description
-  </div>
-  <MyPosts />
-  </div>
+      <ProfileInfo />
+      <MyPosts />
+    </div>
+  )
 }
 
 export default Profile
