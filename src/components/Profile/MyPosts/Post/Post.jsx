@@ -8,7 +8,7 @@ function Post(props) {
         <img src="https://politeka.net/images/2019/11/07/s5v80qnxgMYD0GaNAAxhNyR4SlIvGSIR5UbLlJzR.jpeg" alt="" />
         {props.message}
         <div>
-          <span>like</span>
+          <span>{props.likesCount}</span>
         </div>
       </div>
     </div>
