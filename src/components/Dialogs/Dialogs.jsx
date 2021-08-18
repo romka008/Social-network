@@ -21,21 +21,23 @@ function Dialogs(props) {
     { id: 6, name: 'Kenjoh' },
     { id: 7, name: 'Roman' },
   ]
-
   let messagesData = [
     { messages: 'What is it?' },
     { messages: 'Where are u?' },
     { messages: 'Yo' },
   ]
 
+  let dialogs = dialogsData.map(d => <DialogItems name={d.name} id={d.id} />)
+  let messages = messagesData.map(m => <Message message={m.messages} />)
+
   return <div className={s.dialogs}>
     <div className={s.dialogItems}>
-      <DialogItems name={dialogsData[0].name} id={dialogsData[0].id} />
-      <DialogItems name={dialogsData[1].name} id={dialogsData[1].id} />
+
+      {dialogs}
+
     </div>
     <div className={s.messages}>
-      <Message message={messagesData[0].messages} />
-      <Message message={messagesData[1].messages} />
+      {messages}
     </div>
   </div>
 }
