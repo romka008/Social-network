@@ -11,7 +11,8 @@ import Setting from './components/Setting/Setting';
 
 
 
-function App() {
+function App(props) {
+
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -19,11 +20,11 @@ function App() {
         <Navbar />
         {/* <Profile/> */}
         <div className='app-wrapper-content'>
-          <Route exact path='/dialogs' component={Dialogs} />
-          <Route exact path='/profile' component={Profile} />
-          <Route exact path='/news' component={News} />
-          <Route exact path='/music' component={Music} />
-          <Route exact path='/setting' component={Setting} />
+          <Route exact path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>} />
+          <Route exact path='/profile' render={() => <Profile posts={props.posts}/>} />
+          <Route exact path='/news' render={() => <News/>} />
+          <Route exact path='/music' render={() => <Music/>} />
+          <Route exact path='/setting' render={() => <Setting/>} />
         </div>
       </div>
     </BrowserRouter>
