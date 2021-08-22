@@ -27,6 +27,24 @@ function Navbar() {
     <div className={s.item}>
       <NavLink to="/setting" activeClassName={s.activeLink}>Setting</NavLink>
     </div>
+    <p></p>
+    <div className={s.item}>
+      <NavLink to="/setting" activeClassName={s.activeLink}>Friends</NavLink>
+    </div>
+    <div className={s.friends}>
+      <div>
+        Sergey
+        <img src="https://politeka.net/images/2019/11/07/s5v80qnxgMYD0GaNAAxhNyR4SlIvGSIR5UbLlJzR.jpeg" alt="" />
+      </div>
+      <div>
+        Andrey
+        <img src="https://politeka.net/images/2019/11/07/s5v80qnxgMYD0GaNAAxhNyR4SlIvGSIR5UbLlJzR.jpeg" alt="" />
+      </div>
+      <div>
+        John
+        <img src="https://politeka.net/images/2019/11/07/s5v80qnxgMYD0GaNAAxhNyR4SlIvGSIR5UbLlJzR.jpeg" alt="" />
+      </div>
+    </div>
   </nav>
 }
 

@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
@@ -14,7 +14,6 @@ import Setting from './components/Setting/Setting';
 function App(props) {
 
   return (
-    <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
         <Navbar />
@@ -27,7 +26,6 @@ function App(props) {
           <Route exact path='/setting' render={() => <Setting/>} />
         </div>
       </div>
-    </BrowserRouter>
 
   );
 }

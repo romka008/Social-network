@@ -22,7 +22,8 @@ let state = {
             { id: 3, messages: 'What are you doing?', likesCount: '594' },
             { id: 4, messages: 'What are you doing?', likesCount: '594' },
         ]
-    }
+    },
+
 }
 
 export default state
