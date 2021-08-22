@@ -29,7 +29,7 @@ function Navbar() {
     </div>
     <p></p>
     <div className={s.item}>
-      <NavLink to="/setting" activeClassName={s.activeLink}>Friends</NavLink>
+      <NavLink to="/friends" activeClassName={s.activeLink}>Friends</NavLink>
     </div>
     <div className={s.friends}>
       <div>
