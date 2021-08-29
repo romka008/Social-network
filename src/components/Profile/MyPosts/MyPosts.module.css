@@ -5,3 +5,11 @@
 .posts {
     margin-top: 10px;
 }
+
+.postsBlock .newText textarea {
+    outline: none;
+    -moz-appearance: none;
+    border: 1px solid #999;
+    background-color: rgb(226, 226, 226);
+    border-radius: 6px;
+}
