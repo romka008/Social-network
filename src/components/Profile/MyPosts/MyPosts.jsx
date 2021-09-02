@@ -1,6 +1,9 @@
 import React from 'react';
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+
+
 
 function MyPosts(props) {
 
@@ -9,12 +12,12 @@ function MyPosts(props) {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    props.dispatch({type: 'ADD-POST'});
+    props.dispatch(addPostActionCreator());
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    let action = {type: 'UPDATE-NEW-POST-TEXT', newText: text};
+    let action = updateNewPostTextActionCreator(text);
     props.dispatch(action);
   }
 
