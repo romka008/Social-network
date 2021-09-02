@@ -13,14 +13,13 @@ function Dialogs(props) {
   let newMessageElement = React.createRef();
 
   let addMessage = () => {
-    props.addMessage();
+    props.dispatch({type: 'ADD-MESSAGE'});
   }
 
   let onMessageChange = () => {
     let text = newMessageElement.current.value;
-    props.updateNewMessageText(text);
+    props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text});
   }
-
 
   return <div className={s.dialogs}>
     <div className={s.dialogItems}>
@@ -34,7 +33,7 @@ function Dialogs(props) {
           value={props.dialogsPage.newMessageText}/>
         </div>
         <div>
-          <button onClick={props.addMessage}>Send</button>
+          <button onClick={addMessage}>Send</button>
         </div>
       </div>
     </div>
