@@ -7,6 +7,7 @@ import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 
 
@@ -17,13 +18,11 @@ function App(props) {
       <Navbar />
       {/* <Profile/> */}
       <div className='app-wrapper-content'>
-        <Route exact path='/dialogs' render={() => <Dialogs
-          dialogsPage={props.state.dialogsPage}
-          dispatch={props.dispatch} />} />
+        <Route exact path='/dialogs' render={() => <DialogsContainer
+          store={props.store} />} />
 
         <Route exact path='/profile' render={() => <Profile
-          profilePage={props.state.profilePage}
-          dispatch={props.dispatch} />} />
+          store={props.store} />} />
           
         <Route exact path='/news' render={() => <News />} />
         <Route exact path='/music' render={() => <Music />} />
