@@ -9,10 +9,10 @@ function Dialogs(props) {
 
   let state = props.dialogsPage
 
-  let dialogsElement = state.dialogs.map(d => <DialogItems name={d.name} id={d.id} />)
-  let messagesElement = state.messages.map(m => <Message message={m.messages} />)
+  let dialogsElement = state.dialogs.map(d => <DialogItems name={d.name} key={d.id} id={d.id} />)
+  let messagesElement = state.messages.map(m => <Message message={m.messages} key={m.id} />)
 
-  
+
   let newMessageElement = React.createRef();
 
   let addMessage = () => {
@@ -33,7 +33,7 @@ function Dialogs(props) {
       <div>
         <div>
           <textarea onChange={onMessageChange} name="" ref={newMessageElement} cols="30" rows="5"
-          value={state.newMessageText}/>
+            value={state.newMessageText} />
         </div>
         <div>
           <button onClick={addMessage}>Send</button>
