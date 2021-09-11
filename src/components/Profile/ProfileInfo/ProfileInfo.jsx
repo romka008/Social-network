@@ -1,13 +1,21 @@
+import Preloader from '../../common/preloader/Preloader';
 import s from './ProfileInfo.module.css';
 
-function ProfileInfo() {
+function ProfileInfo(props) {
+if (!props.profile) {
+return <Preloader/>
+}
+
   return (
     <div>
       <div>
         <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701313431.jpg" alt="" />
       </div>
       <div className={s.descriptionBlock}>
-        ava + description
+        <img src={props.profile.photos.large}  />
+        <div>
+        Обо мне: {props.profile.aboutMe}
+        </div>
       </div>
     </div>
   )
