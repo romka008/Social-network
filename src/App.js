@@ -1,6 +1,6 @@
 import './App.css';
 import { Route } from 'react-router-dom';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
@@ -14,7 +14,7 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 function App(props) {
   return (
     <div className='app-wrapper'>
-      <Header />
+      <HeaderContainer />
       <Navbar />
       {/* <Profile/> */}
       <div className='app-wrapper-content'>
