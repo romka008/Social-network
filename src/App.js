@@ -8,6 +8,7 @@ import Setting from './components/Setting/Setting';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import LoginPage from './components/Login/login';
 
 
 
@@ -26,6 +27,7 @@ function App(props) {
         <Route exact path='/news' render={() => <News />} />
         <Route exact path='/music' render={() => <Music />} />
         <Route exact path='/setting' render={() => <Setting />} />
+        <Route exact path='/login' render={() => <LoginPage />} />
       </div>
     </div>
 
