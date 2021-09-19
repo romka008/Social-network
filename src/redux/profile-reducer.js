@@ -75,7 +75,6 @@ export const getStatus = (userID) => {
 export const updateStatus = (status) => {
     return (dispatch) => {
         profileAPI.updateStatus(status).then(data => {
-            debugger;
             if (data.resultCode === 0) {
                 dispatch(setStatus(status))
             }
