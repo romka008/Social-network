@@ -45,17 +45,26 @@ export const profileAPI = {
     },
     getStatus(userID) {
         return instance.get(`profile/status/` + userID)
-            .then(response => { return response.data; })
+            .then(response => { return response.data });
     },
     updateStatus(status) {
         return instance.put(`profile/status`, { status: status })
-            .then(response => { return response.data; })
+            .then(response => { return response.data });
     },
 }
 
 export const authAPI = {
     me() {
         return instance.get(`auth/me`)
+            .then(response => {
+                return response.data;
+            })
+    },
+    login(email, password, rememberMe = false) {
+        return instance.post('auth/login', { email, password, rememberMe })
+    },
+    logout() {
+        return instance.delete('auth/login')
             .then(response => {
                 return response.data;
             })
