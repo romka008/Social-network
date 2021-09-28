@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import HeaderContainer from './components/Header/HeaderContainer';
@@ -9,32 +10,55 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import LoginPage from './components/Login/login';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import { compose } from 'redux';
+import { initializeApp } from './redux/app-reducer';
+import Preloader from './components/common/preloader/Preloader';
 
 
 
-function App(props) {
-  return (
-    <div className='app-wrapper'>
-      <HeaderContainer />
-      <Navbar />
-      {/* <Profile/> */}
-      <div className='app-wrapper-content'>
-        <Route exact path='/dialogs' render={() => <DialogsContainer />} />
+class App extends React.Component {
+  componentDidMount() {
+    this.props.initializeApp()
+  }
 
-        <Route path='/profile/:userID?' render={() => <ProfileContainer/> } />
-        <Route exact path='/users' render={() => <UsersContainer />} />
-
-        <Route exact path='/news' render={() => <News />} />
-        <Route exact path='/music' render={() => <Music />} />
-        <Route exact path='/setting' render={() => <Setting />} />
-        <Route exact path='/login' render={() => <LoginPage />} />
+  render() {
+    if (!this.props.initialized) {
+      return <div className='preloader'>
+        <Preloader />
       </div>
-    </div>
+    }
 
-  );
+    return (
+      <div className='app-wrapper'>
+        <HeaderContainer />
+        <Navbar />
+        {/* <Profile/> */}
+        <div className='app-wrapper-content'>
+          <Route exact path='/dialogs' render={() => <DialogsContainer />} />
+
+          <Route path='/profile/:userID?' render={() => <ProfileContainer />} />
+          <Route exact path='/users' render={() => <UsersContainer />} />
+
+          <Route exact path='/news' render={() => <News />} />
+          <Route exact path='/music' render={() => <Music />} />
+          <Route exact path='/setting' render={() => <Setting />} />
+          <Route exact path='/login' render={() => <LoginPage />} />
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized,
+})
+
+export default compose(
+  connect(mapStateToProps, { initializeApp }),
+  withRouter,
+)(App)
 
 
 // import logo from './logo.svg';

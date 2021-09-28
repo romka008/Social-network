@@ -17,3 +17,9 @@
 .app-wrapper-content img {
     max-width: 800px;
 }
+
+.preloader {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
