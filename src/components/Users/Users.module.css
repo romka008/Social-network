@@ -10,3 +10,7 @@
 .selectedPage {
     font-weight: bold;
 }
+
+.pages {
+    display: block
+}

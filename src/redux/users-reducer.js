@@ -115,7 +115,7 @@ export const follow = (userID) => {
 export const unfollow = (userID) => {
     return (dispatch) => {
         dispatch(toggleFollowingProgress(true, userID))
-        usersAPI.follow(userID)
+        usersAPI.unfollow(userID)
             // axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
             //   withCredentials: true,
             //   headers: {
